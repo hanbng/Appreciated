@@ -14,18 +14,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipControl: UISegmentedControl!
-    @IBOutlet weak var testView: UIView!
+    @IBOutlet weak var calculateView: UIView!
     @IBOutlet weak var billFieldToTopSafeArea: NSLayoutConstraint!
     @IBOutlet weak var billFieldToCenter: NSLayoutConstraint!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("view will appear")
+        
+        // Get the default selected segment of tipControl
         let defaults = UserDefaults.standard
         let defaultSelectedSegment = defaults.integer(forKey: "selectedSegmentIndex")
         tipControl.selectedSegmentIndex = defaultSelectedSegment
+        
+        // Hide tipControl and calculateView
         tipControl.alpha = 0
-        testView.isHidden = true
+        calculateView.isHidden = true
+        
+        // Make billField the center of Safe Area
         billFieldToTopSafeArea.priority = UILayoutPriority.defaultLow
         billFieldToCenter.priority = UILayoutPriority.defaultHigh
         self.view.layoutIfNeeded()
@@ -53,11 +59,16 @@ class ViewController: UIViewController {
     }
 
     
-    func higherView(view: UIView) {
+    func springView(view: UIView) {
+        // Move billField to the top of Safe Area
         billFieldToCenter.priority = UILayoutPriority.defaultLow
         billFieldToTopSafeArea.priority = UILayoutPriority.defaultHigh
         self.view.layoutIfNeeded()
+        
+        // Let tipControl appear
         tipControl.alpha = 1
+        
+        // Animate calculateView
         let xPosition = view.frame.minX
         let yPosition = view.frame.minY - 10
         let width = view.frame.width
@@ -66,18 +77,17 @@ class ViewController: UIViewController {
         animations: { () -> Void in
             view.frame = CGRect(x: xPosition, y: yPosition, width: width, height: height)
         }, completion: nil)
-        testView.isHidden = false
+        calculateView.isHidden = false
     }
     
     
     @IBAction func onTap(_ sender: Any) {
         print("Tap succeeded")
-        
         view.endEditing(true)
     }
     
     @IBAction func calculateTip(_ sender: Any) {
-        higherView(view: testView)
+        springView(view: calculateView)
         print("I'm calculating")
         // Get the bill amount
         let billAsString = billField.text!.replacingOccurrences(of: "$", with: "")

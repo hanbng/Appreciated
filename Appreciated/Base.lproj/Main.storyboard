@@ -65,7 +65,7 @@
                                     <constraint firstItem="ocG-62-Yb3" firstAttribute="leading" secondItem="khJ-Ch-t4m" secondAttribute="leading" constant="60" id="JW9-bh-vXH"/>
                                     <constraint firstAttribute="trailing" secondItem="f2K-MT-DLu" secondAttribute="trailing" constant="20" id="KJS-RQ-lw7"/>
                                     <constraint firstItem="gbq-bw-iyK" firstAttribute="leading" secondItem="khJ-Ch-t4m" secondAttribute="leading" constant="22" id="Liy-UZ-yvz"/>
-                                    <constraint firstItem="gbq-bw-iyK" firstAttribute="firstBaseline" secondItem="f2K-MT-DLu" secondAttribute="baseline" constant="48" symbolType="layoutAnchor" id="VWr-Rn-vQS"/>
+                                    <constraint firstItem="gbq-bw-iyK" firstAttribute="firstBaseline" secondItem="f2K-MT-DLu" secondAttribute="baseline" constant="44" symbolType="layoutAnchor" id="VWr-Rn-vQS"/>
                                     <constraint firstAttribute="trailing" secondItem="ocG-62-Yb3" secondAttribute="trailing" constant="20" id="cw8-1X-fwj"/>
                                     <constraint firstItem="RNS-H5-G8N" firstAttribute="top" secondItem="khJ-Ch-t4m" secondAttribute="top" constant="8" id="g0g-tO-sg2"/>
                                     <constraint firstItem="f2K-MT-DLu" firstAttribute="leading" secondItem="khJ-Ch-t4m" secondAttribute="leading" constant="60" id="nAD-io-6Cp"/>
@@ -121,7 +121,7 @@
                         <outlet property="billField" destination="6iD-Mo-Zkr" id="eLx-jZ-czw"/>
                         <outlet property="billFieldToCenter" destination="QUY-q6-N3f" id="gcv-0r-JMd"/>
                         <outlet property="billFieldToTopSafeArea" destination="VvQ-mz-etv" id="XHe-7D-mD9"/>
-                        <outlet property="testView" destination="khJ-Ch-t4m" id="bAQ-Ce-3Pr"/>
+                        <outlet property="calculateView" destination="khJ-Ch-t4m" id="bAQ-Ce-3Pr"/>
                         <outlet property="tipControl" destination="N3D-rr-ISf" id="Ujp-zt-4xQ"/>
                         <outlet property="tipLabel" destination="f2K-MT-DLu" id="KQ2-G7-owt"/>
                         <outlet property="totalLabel" destination="ocG-62-Yb3" id="ZWa-dI-eFW"/>
